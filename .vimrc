@@ -191,3 +191,4 @@ let g:UltiSnipsExpandTrigger = "<c-o>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:jedi#use_splits_not_buffers = "top"
