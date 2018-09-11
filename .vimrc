@@ -38,6 +38,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'romainl/vim-qf'
 Plugin 'rhysd/vim-grammarous'
+Plugin 'vim-scripts/BufOnly.vim'
 " Plugin 'lyokha/vim-xkbswitch'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
@@ -105,6 +106,7 @@ set backspace=indent,eol,start
 syntax on
 " nnoremap <C-n> :tabnew<CR>
 nnoremap <C-c> :bp\|bd #<CR>
+nnoremap <C-x> :BufOnly<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-j> <C-w>j
