@@ -39,6 +39,7 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'romainl/vim-qf'
 Plugin 'rhysd/vim-grammarous'
 Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'davidhalter/jedi-vim'
 " Plugin 'lyokha/vim-xkbswitch'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
