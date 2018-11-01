@@ -1,3 +1,12 @@
+" This script is compatible with vim8, earlier version not supported
+" add-apt-repository ppa:jonathonf/vim
+" this repo contains the newest vim, you can also compile by your self
+"
+" Please install vundle before install other plugins
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"
+"
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
