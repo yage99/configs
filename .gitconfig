@@ -1,0 +1,26 @@
+[core]
+	excludesfile = /Users/zhangya/.gitignore_global
+	ignorecase = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = zhangya
+	email = zhangya998@gmail.com
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+[color]
+	ui = auto
+[http]
+	cookiefile = /Users/zhangya/.gitcookies
+[commit]
+	template = /Users/zhangya/.stCommitMsg
+[format]
+    pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+[log]
+    date = relative

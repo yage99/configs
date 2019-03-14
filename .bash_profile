@@ -13,8 +13,9 @@ PATH="/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/mysql-5.7.19-macos10.12-x
 export PATH
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-alias gitll="git log --all --decorate --oneline --graph"
+alias gitll="git log --graph"
 alias ls="ls -G"
 
 export EDITOR=vim
 export TEXINPUTS="~/Projects/latex-templates:"
+export MATLAB_JAVA=${JAVA_HOME}jre

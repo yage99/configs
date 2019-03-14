@@ -49,6 +49,8 @@ Plugin 'romainl/vim-qf'
 Plugin 'rhysd/vim-grammarous'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'iamcco/markdown-preview.vim'
+Plugin 'kristijanhusak/vim-carbon-now-sh'
 " Plugin 'lyokha/vim-xkbswitch'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
@@ -139,6 +141,7 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Compact_Format = 1
 let g:tlist_tex_settings='latex;s:sections;l:labels;c:cites'
 let g:tlist_bib_settings='bibtex;e:entries;t:titles'
+let g:tlist_markdown_settings='markdown;h:Headlins'
 
 " vimtex configurations
 let g:vimtex_view_method='skim'
@@ -201,3 +204,5 @@ let g:UltiSnipsExpandTrigger = "<c-l>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:jedi#use_splits_not_buffers = "top"
+
+set foldmethod=indent
