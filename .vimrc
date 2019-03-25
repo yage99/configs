@@ -35,7 +35,7 @@ Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
@@ -57,7 +57,8 @@ Plugin 'kristijanhusak/vim-carbon-now-sh'
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plugin 'yage99/vim-snippets'
+" Plugin 'honza/vim-snippets'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -78,6 +79,7 @@ filetype plugin indent on    " required
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#wordcount#enabled = 1
 colo PaperColor
 let g:airline_theme = "tomorrow"
 
@@ -107,8 +109,8 @@ let g:ale_open_list = 1
 " augroup END
 
 " source /etc/vim/vimrc
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set nu
 set background=dark
@@ -197,7 +199,7 @@ nmap cc :call ChineseCount()<cr>
 
 " snipet configuration
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger = "<c-l>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
 " let g:UltiSnipsJumpForwardTrigger="<c-b>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -206,3 +208,9 @@ let g:UltiSnipsEditSplit="vertical"
 let g:jedi#use_splits_not_buffers = "top"
 
 set foldmethod=indent
+
+try
+  set undodir=~/.vim/temp/undodir
+  set undofile
+catch
+endtry
