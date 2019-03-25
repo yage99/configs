@@ -58,6 +58,7 @@ Plugin 'kristijanhusak/vim-carbon-now-sh'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'yage99/vim-snippets'
+Plugin 'simnalamburt/vim-mundo.git'
 " Plugin 'honza/vim-snippets'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
