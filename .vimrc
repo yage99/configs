@@ -51,7 +51,7 @@ Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'kristijanhusak/vim-carbon-now-sh'
-" Plugin 'lyokha/vim-xkbswitch'
+Plugin 'lyokha/vim-xkbswitch'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -93,6 +93,13 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \   'tex': ['lacheck'],
 \   'php': ['php']
+\}
+" \   'java': ['javalsp']
+let g:ale_fixers = {
+\   'java': [
+\     'trim_whitespace',
+\     'google_java_format'
+\   ],
 \}
 let g:ale_set_loclist = 1
 let g:ale_set_quickfix = 0
@@ -142,7 +149,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " taglist configuration
 let Tlist_Use_Right_Window = 1
 let Tlist_Compact_Format = 1
-let g:tlist_tex_settings='latex;s:sections;l:labels;c:cites'
+let g:tlist_tex_settings='latex;c:chapter;s:sections;t:subsections;l:labels'
 let g:tlist_bib_settings='bibtex;e:entries;t:titles'
 let g:tlist_markdown_settings='markdown;h:Headlins'
 
@@ -154,23 +161,32 @@ let g:vimtex_view_automatic=1
 " let g:grammarous#show_first_error=1
 
 nmap vv <Plug>(grammarous-open-info-window)
+set linebreak
+nmap j gj
+nmap k gk
 
 " IM switch
-" let g:XkbSwitchEnabled = 0
-" let g:XkbSwitchNLayout = '0'
-" let g:XkbSwitchILayout = '1'
-" let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.dylib'
+" let g:XkbSwitchEnabled = 1
+" let g:XkbSwitchNLayout = 2
+" let g:XkbSwitchILayout = 0
+let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
 " let g:XkbSwitchSkipFt = [ 'nerdtree', 'vim', 'cpp' ]
 
-" function SetUsLayout()
-"     :!xkbswitch -s 0
-" endfunction
-" function SetABCLayout()
-"     :!xkbswitch -s 1
-" endfunction
-"
-" autocmd InsertLeave * call SetUsLayout()
-" autocmd InsertEnter * call SetABCLayout()
+function SetUsLayout()
+  if &ft == 'tex'
+    execute 'silent !issw com.apple.keylayout.US' | redraw!
+  endif
+endfunction
+
+function SetABCLayout()
+  if &ft == 'tex'
+    execute 'silent !issw com.apple.inputmethod.SCIM.ITABC' | redraw!
+  endif
+endfunction
+
+autocmd InsertLeave * call SetUsLayout()
+autocmd InsertEnter * call SetABCLayout()
+set timeoutlen=1000 ttimeoutlen=0
 
 " nmap cc :%s/[\u4E00-\u9FCC]//n
 function! ChineseCount() range
@@ -196,7 +212,7 @@ function! ChineseCount() range
     echo "Count of Chinese charasters is: " . cc
 endfunc
 
-nmap cc :call ChineseCount()<cr>
+nmap <leader>c :call ChineseCount()<cr>
 
 " snipet configuration
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -215,3 +231,9 @@ try
   set undofile
 catch
 endtry
+" Persistent undo
+set undofile
+set undodir=$HOME/.vim
+
+set undolevels=1000
+set undoreload=10000

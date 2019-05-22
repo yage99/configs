@@ -1,5 +1,5 @@
 export PATH=/usr/local/opt/qt/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/Users/zhangya/Library/Android/sdk/tools:/Users/zhangya/Library/Android/sdk/platform-tools:/Applications/apache-maven-3.3.3/bin:/Library/TeX/texbin:$PATH
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/
 ulimit -S -n 1024
 
 if [ -d "/Volumes/MarshMallow/bin" ] ; then
@@ -13,7 +13,7 @@ PATH="/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/mysql-5.7.19-macos10.12-x
 export PATH
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-alias gitll="git log --graph"
+alias gitll="git log --graph --decorate"
 alias ls="ls -G"
 
 export EDITOR=vim
