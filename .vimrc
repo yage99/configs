@@ -52,7 +52,7 @@ Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'kristijanhusak/vim-carbon-now-sh'
-Plugin 'lyokha/vim-xkbswitch'
+" Plugin 'lyokha/vim-xkbswitch'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -170,7 +170,7 @@ nmap k gk
 " let g:XkbSwitchEnabled = 1
 " let g:XkbSwitchNLayout = 2
 " let g:XkbSwitchILayout = 0
-let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+" let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
 " let g:XkbSwitchSkipFt = [ 'nerdtree', 'vim', 'cpp' ]
 
 function SetUsLayout()
